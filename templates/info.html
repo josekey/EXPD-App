@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Info
+{% endblock %}
+
+{% block main %}
+    <h1 class="page-title">Information</h1>
+    <p>This page contains instructions on how to use this application.</p>
+    <hr>
+    <h2>Registration</h2>
+
+    <div class="row blocktext" style="padding-top: 1rem;">
+        <div class="column infocol"><b>Step 1: </b></div>
+        <div class="column infocol"> Log into the patient's FitBit Account.</div>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 2: </b></div>
+        <div class="column infocol"> Having logged into the patient's Fitbit account. Follow <a href="https://dev.fitbit.com/apps/new">this link</a> to be redirected to FitBit's app registration site.</div>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 3: </b></div>
+        <div class="column infocol"> <p>You should be looking at a form titled <i>Register an application</i>. Refer to the image bellow. <br>
+            All fields other than 'OAuth 2.0 Application Type' and 'Callback URL' can be filled in with anything. <br>
+            For ease, it is recommended that you use 'https://www.google.com/' for the unimportant fields.</p>
+        </div>
+    </div>
+    <img src="/static/fitbitregister.png" alt="" width='700'>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 4: </b></div>
+        <div class="column infocol"> Make sure to fill in the following fields. This portion of the form should look identical to the form above.</div>
+    </div>
+    <div class="container">
+        <p><i>OAuth 2.0 Application Type: </i> <b>Personal</b> <br>
+            <i>Callback URL: </i> <b> http://127.0.0.1:8080/</b>
+        </p>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 5: </b></div>
+        <div class="column infocol"> Submit the form and enter the provided Client ID and Client Secret into the Register tab
+            <br>of this application along with a subject ID of your choosing.</div>
+    </div>
+    
+    <hr>
+
+    <h2>Retrieving Data</h2> 
+    <div class="row blocktext" style="padding-top: 1rem;">
+        <div class="column infocol"><b>Step 1: </b></div>
+        <div class="column infocol"> Go to the Connect tab and choose the desired subject from the dropdown.<br> <i>A new tab will open confirming authorization.</i> Simply return to the app.</div>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 2: </b></div>
+        <div class="column infocol"> Go to the Get Data tab and choose the desired date range.</div>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 3: </b></div>
+        <div class="column infocol"> You will be redirected to a page with a graph of the patient heart rate for the selected date range.</div>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 4: </b></div>
+        <div class="column infocol"> Bellow the graph, click the button to download the data into a .csv file. <br>You will be redirected to the home page and receive confirmation.</div>
+    </div>
+    <div class="row blocktext">
+        <div class="column infocol"><b>Step 5: </b></div>
+        <div class="column infocol"> Collect the file by going to the Output folder in the EXPD app directory.</div>
+    </div>
+{% endblock %}

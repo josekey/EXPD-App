@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Connect 
+{% endblock %}
+
+{% block main %}
+    <h1 class="page-title">Connect to FitBit</h1>
+    <p>After selecting a subject, you will be redirected to a page confirming authorization.</p>
+    <form action="/connect" method="post">
+        <div class="form-group" >
+            <div class="input-group mb-3" style="padding-left: 8rem; padding-right: 8rem;">
+                <select name="subject" class="custom-select" id="subject" required>
+                    <option disabled selected value> --Please choose a subject to in order to establish a link with FitBit-- </option>
+                    {% for id in ids %}
+                        <option value='{{id}}'>{{ id }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

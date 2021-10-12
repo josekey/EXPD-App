@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <h1 class="page-title">Register Study Subject</h1>
+    <p>Registration Instructions: gather OAuth2.0 Client ID and Secret from FitBit. Refer to Info for details.</p>
+    <form action='/register' method="POST">
+        <div class="form-group">
+            <input type="text" name="id"  autocomplete="off" placeholder="Subject ID" required>
+            <input type="text" name="client_id"  autocomplete="off" placeholder="OAuth 2.0 Client ID" required>
+            <input type="text" name="secret"  autocomplete="off" placeholder="Client secret" required>
+            <button type='submit' class='btn btn-primary'>Submit</button>
+        </div>
+    </form>
+{% endblock %}

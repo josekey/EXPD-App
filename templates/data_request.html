@@ -1,0 +1,39 @@
+{% extends "layout.html"%}
+
+{% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            let date1 = document.querySelector('#Start');
+            let date2 = document.querySelector('#End');
+
+            date1.addEventListener('change', function() {
+                date2.min = date1.value;
+                date2.value = date1.value;
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block title %}
+    Request
+{% endblock %}
+
+{% block main %}
+    <h1 class="page-title">Set Date to Get Data</h1>
+    <form action="/pull" method="POST">
+        <div class="form-group" >
+            <label>
+                Start date:
+            </label>
+            <input type="date" name="Start" id="Start" min="2020-01-01" max="2022-12-31" required>
+        </div>
+        <div class="form-group" >    
+            <label>
+                End date:
+            </label>
+            <input type="date" name="End" id="End" min="2020-01-01" max="2022-12-31" required>
+        </div>
+        <button class="btn btn-primary" type="Submit">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Display
+{% endblock %}
+
+{% block script %}
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+           
+            var data = google.visualization.arrayToDataTable({{ df_list|tojson }});
+            
+            var options = {
+                title: '{{'Heart Rate for Subject '~id~': '~d1~' to '~d2 }}',
+                titleTextStyle: {fontSize: 20},
+                curveType: 'function',
+                legend: {position: 'none'},
+                hAxis: {title: 'Time'},
+                vAxis: {title: 'Heart Rate'}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+<h1 class="page-title" style="padding-bottom: 0rem;">Data for Subject</h1>
+<div id="curve_chart" style="width: 900px; height: 500px; margin: auto; padding-top: 0rem; padding-bottom: 2rem;"></div>
+<form action="/download" method="POST">
+    <button name='filename' class="btn btn-primary" type="submit">Download CSV</button>
+</form>
+{% endblock %}
