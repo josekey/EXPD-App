@@ -1,5 +1,7 @@
 # Welcome to the EXPD Web App
 EXPD is the shorthand the Tinaz-Evans group uses to refer to their current study: finding correlation between patient exercise and Parkinson's Disease progression. In this study, we will be using FitBits to monitor patient heart rate in order to confirm their exercise is reaching optimal intensity for clinical observation (85% of max heart rate). The purpose of this app is to extract, view, and download the heart rate data from FitBit. 
+## Update
+This project was originally created as a final project for CS50, a co-taught computer science class between Harvard and Yale. This MD file was intended to help non-coding lab members set up a coding environment to use the application. Several local scripts have been added for increased data analysis outside of the web-app.
 ## Installation 
 Because this app runs locally, it is neccessary for the user to have an environment from which to run the app. In my case, I used a linux virutual machine with Visual Studio, which allowed me to create a virtual environment to house libraries required by the application. 
 To install this particular framework, click [here](https://docs.microsoft.com/en-us/windows/python/web-frameworks), though many others should work. 
